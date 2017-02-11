@@ -1,0 +1,51 @@
+=hidden($direction: only)
+  @if ($direction == only or $direction == up)
+    display: none
+  @else if ($direction == down)
+    display: none
+
+=hidden-xl($direction: only)
+  @if ($direction == only or $direction == up)
+    +media-xl(up)
+      display: none
+  @else if ($direction == down)
+    +media-xl(down)
+      display: none
+
+=hidden-lg($direction: only)
+  @if ($direction == only)
+    @media screen and (min-width: $lg) and (max-width: $xl)
+      display: none
+  @else if ($direction == down)
+    +media-lg(down)
+      display: none
+  @else if ($direction == up)
+    +media-lg(up)
+      display: none
+
+=hidden-md($direction: only)
+  @if ($direction == only)
+    @media screen and (min-width: $md) and (max-width: $lg)
+      display: none
+  @else if ($direction == down)
+    +media-md(down)
+      display: none
+  @else if ($direction == up)
+    +media-md(up)
+      display: none
+
+=hidden-sm($direction: only)
+  @if ($direction == only)
+    @media screen and (min-width: $sm) and (max-width: $md)
+      display: none
+  @else if ($direction == down)
+    +media-sm(max)
+      display: none
+  @else if ($direction == up)
+    +media-sm()
+      display: none
+
+=hidden-xs($direction: min)
+  @if ($direction == down)
+    +media-xs(max)
+      display: none

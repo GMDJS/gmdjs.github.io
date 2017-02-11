@@ -1,0 +1,42 @@
+{
+  "name": "ready_template",
+  "version": "0.2.0",
+  "description": "Ready template for web",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GMDJS/ready_template.git"
+  },
+  "keywords": [
+    "web",
+    "html",
+    "css",
+    "postcss",
+    "sass",
+    "template",
+    "gulp",
+    "adaptive",
+    "framework",
+    "matetial",
+    "javascript"
+  ],
+  "author": "GriNAME",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GMDJS/ready_template/issues"
+  },
+  "homepage": "https://github.com/GMDJS/ready_template#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.7.2",
+    "browser-sync": "^2.18.7",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-group-css-media-queries": "^1.2.0",
+    "gulp-notify": "^3.0.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-pug": "^3.2.0",
+    "gulp-sass": "^3.1.0",
+    "node-bourbon": "^4.2.8",
+    "postcss-font-magician": "^1.6.0"
+  }
+}

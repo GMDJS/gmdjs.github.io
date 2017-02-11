@@ -1,0 +1,26 @@
+.sect
+  max-width: 100%
+  background-color: #afa
+
+.header
+  +grid()
+  background-color: #ddd
+  height: 100px
+  +align(between, end)
+
+  &__logo
+    +col(2)
+  &__top-menu
+    +col-lg(6, no)
+    +col-md(9)
+    +hidden-sm()
+    +offset-lg(right, 3)
+  &__menu
+    +hidden-md(up)
+
+.top-menu
+  display: flex
+  &__link
+    margin:
+      left: auto
+      right: auto
