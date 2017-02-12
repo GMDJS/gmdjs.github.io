@@ -1,0 +1,65 @@
++b.SECTION.section._lite-gray
+  +e.H2.title Mixin +col()
+  +e.description
+    p
+      | Для каждого элемента родительского дива, заданным контейнером сетки, следует использовать миксин
+      span  +col()
+      |  c суффиксами или без.
+      | Этот миксин без суффикса указывает размер для елемента глобально
+    p
+      | Чтобы задать элементу размер для конкретного разрешения добавьте суффиксы
+      span  -xs -sm -md -lg -xl
+      <br>
+      | Количестов колонок, которое займет элемент, задается аргументом в скобках. Например
+      span  +col-md(5)
+      |  - будет занимать 5 колонок на средних экранах.
+
+
+  +e.example
+    +b.box._grid-in
+      +e.col 1
+
+    +b.box._grid-in
+      +e.col._3._xs-12 3
+      +e.col._7._xs-12 7
+      +e.col._2._xs-12 2
+
+    +b.box._grid-in
+      +e.col._xs-12 auto
+      +e.col._xs-12 auto
+      +e.col._xs-12 auto
+      +e.col._xs-12 auto
+
+  +e.code
+    pre
+      | <h3>HTML</h3>
+      | &lt;div class="grid"&gt;
+      |   &lt;div class="elem"&gt;auto&lt;/div&gt;
+      | &lt;/div&gt;
+      |
+      | &lt;div class="grid"&gt;
+      |   &lt;div class="elem_3"&gt;3&lt;/div&gt;
+      |   &lt;div class="elem_7"&gt;7&lt;/div&gt;
+      |   &lt;div class="elem_2"&gt;2&lt;/div&gt;
+      | &lt;/div&gt;
+      |
+      | &lt;div class="grid"&gt;
+      |   &lt;div class="elem"&gt;auto&lt;/div&gt;
+      |   &lt;div class="elem"&gt;auto&lt;/div&gt;
+      |   &lt;div class="elem"&gt;auto&lt;/div&gt;
+      | &lt;/div&gt;
+    pre
+      | <h3>Sass</h3>
+      | .grid
+      |   +grid()
+      |   .elem
+      |     +col()
+      |   .elem_3
+      |     +col(3)
+      |     +col-xs(12)
+      |   .elem_7
+      |     +col(7)
+      |     +col-xs(12)
+      |   .elem_2
+      |     +col(2)
+      |     +col-xs(12)
