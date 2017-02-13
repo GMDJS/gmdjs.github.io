@@ -8,15 +8,18 @@
   &_content
     +container()
 
-  &_align-xl
-    +align-xl()
-  &_aling-lg
-    +align-lg()
-  &_align-md
+  &_align-1
+    +align-xl(around)
+    +align-lg(end)
     +align-md()
-  &_align-sm
-    +align-sm()
-  &_align-xs
+    +align-sm(center)
+    +align-xs()
+
+  &_align-2
+    +align-xl(between)
+    +align-lg(center)
+    +align-md(end)
+    +align-sm(between)
     +align-xs()
 
   &__col
@@ -196,7 +199,7 @@
   &__offset-r-3
     +offset(right, 3)
   &__offset-r-4
-    +offset(right, 4)
+    +offset-sm(right, 4, down)
   &__offset-r-5
     +offset(right, 5)
   &__offset-r-6
@@ -277,3 +280,20 @@
     +hidden-sm(down)
   &__hidden-xs-down
     +hidden-xs(down)
+
+
+  &__media-xl
+    +media-xl()
+      background-color: #795548
+  &__media-lg
+    +media-lg()
+      background-color: #FFC107
+  &__media-md
+    +media-md()
+      background-color: #009688
+  &__media-sm
+    +media-sm()
+      background-color: #673AB7
+  &__media-xs
+    +media-xs()
+      background-color: #F44336

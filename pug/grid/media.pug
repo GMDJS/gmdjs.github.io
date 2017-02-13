@@ -1,0 +1,59 @@
++b.SECTION.section._lite-gray
+  +e.H2.title Mixin +media()
+  +e.description
+    p
+      | Ecли вам нужно применить какие-то свои стили для определенных размеров экрана, вы можете воспользоваться миксином
+      span  +media()
+      |  с нужным суффиксом
+      span  -xs -sm -md -lg -xl
+      | . После него добавляйте любые свои стили, они применятся только для заданного размера экрана.
+      |  Миксин принимает однин аргумент со значениями:
+    P
+      span  only
+      |  - медиа запрос для текущего разрешения экрана, указанного суффиксом в миксине<br>
+      span  up
+      |  - медиа запрос для текущего разрешения и всех больших<br>
+      span  down
+      |  - медиа запрос для текущего разрешения и всех меньших<br>
+
+
+  +e.example
+    +b.box._grid-in
+      +e.col._12.__media-xs media-xs
+      +e.col._12.__media-sm media-sm
+      +e.col._12.__media-md media-md
+      +e.col._12.__media-lg media-lg
+      +e.col._12.__media-xl media-xl
+
+  +e.code
+    pre
+      | <h3>HTML</h3>
+      | &lt;div class="grid"&gt;
+      |   &lt;div class="elem xl"&gt;media-xl&lt;/div&gt;
+      |   &lt;div class="elem lg"&gt;media-lg&lt;/div&gt;
+      |   &lt;div class="elem md"&gt;media-md&lt;/div&gt;
+      |   &lt;div class="elem sm"&gt;media-sm&lt;/div&gt;
+      |   &lt;div class="elem xl"&gt;media-xl&lt;/div&gt;
+      | &lt;/div&gt;
+
+    pre
+      | <h3>Sass (sass syntax)</h3>
+      | .grid
+      |   +grid()
+      |   .elem
+      |     +col()
+      |   .xl
+      |     +media-xl()
+      |       background-color: #795548
+      |   .lg
+      |     +media-lg()
+      |       background-color: #FFC107
+      |   .md
+      |     +media-md()
+      |       background-color: #009688
+      |   .sm
+      |     +media-sm()
+      |       background-color: #673AB7
+      |   .xl
+      |     +media-xl()
+      |       background-color: #F44336

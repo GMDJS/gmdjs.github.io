@@ -1,34 +1,24 @@
 //- +b.SECTION.section._lite-gray
-//-   +e.H2.title Mixin +grid()
+//-   +e.H2.title Mixin +grid-in()
 //-   +e.description
 //-     p
-//-       | Любой элемент можно сделать контейнером, для этого добавьте миксин
-//-       span  +grid()
+//-       | Вы так же можете сделать
+//-       span  +gitd-in()
 //-       |  c суффиксами или без.
 //-       | Этот миксин без суффикса указывает размер для елемента глобально
 //-     p
 //-       | Чтобы задать элементу размер для конкретного разрешения добавьте суффиксы
 //-       span  -xs -sm -md -lg -xl
 //-       <br>
-//-       | Сколько колонок будет занимать элемент определяет число в скобках. Например
+//-       | Количестов колонок, которое займет элемент, задается аргументом в скобках. Например
 //-       span  +col-md(5)
 //-       |  - будет занимать 5 колонок на средних экранах.
 //-
 //-
 //-   +e.example
 //-     +b.box._grid-in
-//-       +e.col 1
-//-
-//-     +b.box._grid-in
-//-       +e.col._3._xs-12 3
-//-       +e.col._7._xs-12 7
-//-       +e.col._2._xs-12 2
-//-
-//-     +b.box._grid-in
-//-       +e.col._xs-12 auto
-//-       +e.col._xs-12 auto
-//-       +e.col._xs-12 auto
-//-       +e.col._xs-12 auto
+//-       +b.box._grid-in.__col._5._xs-12 5
+//-       +b.box._grid-in.__col._7._xs-12 7
 //-
 //-   +e.code
 //-     pre
@@ -45,11 +35,12 @@
 //-       |
 //-       | &lt;div class="grid"&gt;
 //-       |   &lt;div class="elem"&gt;auto&lt;/div&gt;
+//-       |   &lt;div class="elem_2"&gt;2&lt;/div&gt;
 //-       |   &lt;div class="elem"&gt;auto&lt;/div&gt;
-//-       |   &lt;div class="elem"&gt;auto&lt;/div&gt;
+//-       |   &lt;div class="elem_2"&gt;2&lt;/div&gt;
 //-       | &lt;/div&gt;
 //-     pre
-//-       | <h3>Sass</h3>
+//-       | <h3>Sass (sass syntax)</h3>
 //-       | .grid
 //-       |   +grid()
 //-       |   .elem

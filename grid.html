@@ -23,15 +23,35 @@
                                   <h2 class="section__title">Mixin +grid()
                                   </h2>
                                   <div class="section__description">
-                                    <p>Любой элемент можно сделать контейнером, для этого добавьте миксин<span> +grid()</span>
+                                    <p>Для того чтобы начать делать адаптивную верстку, вам необходимо создать контейнер, в котором вы сможете задавать элеменам сколько колонок они должны занимать внутри контейнера. Для этого в стилях добавьте миксин<span> +grid()</span> к любому селектору. Это может быть class, id, tag.</p>
+                                    <p>Этот миксин принимает один из двух аргументов<span> +grid(fluid)</span> или<span> +grid(fixed)</span>. Агрумент<span> fixed</span> сделает вашу сетку фиксированной, когда размер контейнера для каждого медиа запроса фиксирован. А в случае передачи аргумента<span> fluid</span> контейнер будет растянут на всю ширину экрана браузера.</p>
+                                    <p>По умолчанию стоит значение<span> fixed</span> то есть вам достаточно применить миксин<span> +grid()</span> чтобы получить фиксированную сетку.</p>
+                                  </div>
+                                  <div class="section__code">
+                                    <pre><h3>HTML</h3>
+&lt;div class="your-class"&gt;
+  &lt;div&gt; ... &lt;/div&gt;
+  &lt;div&gt; ... &lt;/div&gt;
+  &lt;div&gt; ... &lt;/div&gt;
+&lt;/div&gt;</pre>
+                                    <pre><h3>Sass (sass syntax)</h3> 
+.your-class
+  +grid()</pre>
+                                  </div>
+                </section>
+                <section class="section section_lite-gray">
+                                  <h2 class="section__title">Mixin +col()
+                                  </h2>
+                                  <div class="section__description">
+                                    <p>Для каждого элемента родительского дива, заданным контейнером сетки, следует использовать миксин<span> +col()</span>
                                        c суффиксами или без.
                                       Этот миксин без суффикса указывает размер для елемента глобально
                                     </p>
-                                    <p>Чтобы задать элементу размер для конкретного разрешения добавьте суффиксы<span> -xs -sm -md -lg -xl</span><br>Сколько колонок будет занимать элемент определяет число в скобках. Например<span> +col-md(5)</span> - будет занимать 5 колонок на средних экранах.</p>
+                                    <p>Чтобы задать элементу размер для конкретного разрешения добавьте суффиксы<span> -xs -sm -md -lg -xl</span><br>Количестов колонок, которое займет элемент, задается аргументом в скобках. Например<span> +col-md(5)</span> - будет занимать 5 колонок на средних экранах.</p>
                                   </div>
                                   <div class="section__example">
                                                 <div class="box box_grid-in">
-                                                                  <div class="box__col">1
+                                                                  <div class="box__col">auto
                                                                   </div>
                                                 </div>
                                                 <div class="box box_grid-in">
@@ -45,11 +65,11 @@
                                                 <div class="box box_grid-in">
                                                                   <div class="box__col box__col_xs-12">auto
                                                                   </div>
-                                                                  <div class="box__col box__col_xs-12">auto
+                                                                  <div class="box__col box__col_2 box__col_xs-12">2
                                                                   </div>
                                                                   <div class="box__col box__col_xs-12">auto
                                                                   </div>
-                                                                  <div class="box__col box__col_xs-12">auto
+                                                                  <div class="box__col box__col_2 box__col_xs-12">2
                                                                   </div>
                                                 </div>
                                   </div>
@@ -67,10 +87,11 @@
 
 &lt;div class="grid"&gt;
   &lt;div class="elem"&gt;auto&lt;/div&gt;
+  &lt;div class="elem_2"&gt;2&lt;/div&gt;
   &lt;div class="elem"&gt;auto&lt;/div&gt;
-  &lt;div class="elem"&gt;auto&lt;/div&gt;
+  &lt;div class="elem_2"&gt;2&lt;/div&gt;
 &lt;/div&gt;</pre>
-                                    <pre><h3>Sass</h3>
+                                    <pre><h3>Sass (sass syntax)</h3>
 .grid
   +grid()
   .elem
@@ -87,70 +108,231 @@
                                   </div>
                 </section>
                 <section class="section section_lite-gray">
-                                  <h2 class="section__title">Mixin +col()
+                                  <h2 class="section__title">Mixin +align()
                                   </h2>
                                   <div class="section__description">
-                                    <p>Для каждого элемента родительского дива, заданным контейнером сетки, следует использовать миксин<span> +col()</span>
-                                       c суффиксами или без.
-                                      Этот миксин без суффикса указывает размер для елемента глобально
-                                    </p>
-                                    <p>Чтобы задать элементу размер для конкретного разрешения добавьте суффиксы<span> -xs -sm -md -lg -xl</span><br>Количестов колонок, которое займет элемент, задается аргументом в скобках. Например<span> +col-md(5)</span> - будет занимать 5 колонок на средних экранах.</p>
+                                    <p>Этот миксин служит для выравнивания элеменовт внутри контейнера и применяется к контейнеру. Его работа происходит за счет flexbox свойств<span> justify-content</span> и<span> align-items</span>.</p>
+                                    <p>Первым аргументом элементы позиционируются по горизонтали. Принимаются значения<span> start</span>,<span> end</span>,<span> center</span>,<span> around</span>,<span> between</span>.<br> Вторым аргументом позиционирование происходит по вертикали. Принимаются значения<span> stretch</span>,<span> start</span>,<span> end</span>,<span> center</span>,<span> baseline</span>.<br> По умолчанию установлены те же значения что и у свойств<span> justify-content</span> и<span> align-items</span>. То есть миксин<span> +align()</span> без аргументов будет равен<span> +align(start, stretch)</span></p>
+                                    <p>Вы так же можете выравнивать элементы внутри контейнера только для нужного разрешения, это осуществляется путем добавления суффиксов<span> -xs -sm -md -lg -xl</span>. Без суффиксов миксин будет действовать для всех разрешений.</p>
                                   </div>
                                   <div class="section__example">
-                                                <div class="box box_grid-in">
-                                                                  <div class="box__col">1
+                                                <div class="box box_grid-in box_align-1">
+                                                                  <div class="box__col box__col_2 box__col_xs-12">2
                                                                   </div>
-                                                </div>
-                                                <div class="box box_grid-in">
-                                                                  <div class="box__col box__col_3 box__col_xs-12">3
-                                                                  </div>
-                                                                  <div class="box__col box__col_7 box__col_xs-12">7
+                                                                  <div class="box__col box__col_2 box__col_xs-12">2
                                                                   </div>
                                                                   <div class="box__col box__col_2 box__col_xs-12">2
                                                                   </div>
                                                 </div>
-                                                <div class="box box_grid-in">
-                                                                  <div class="box__col box__col_xs-12">auto
+                                                <div class="box box_grid-in box_align-2">
+                                                                  <div class="box__col box__col_2 box__col_xs-12">2
                                                                   </div>
-                                                                  <div class="box__col box__col_xs-12">auto
+                                                                  <div class="box__col box__col_2 box__col_xs-12">2
                                                                   </div>
-                                                                  <div class="box__col box__col_xs-12">auto
-                                                                  </div>
-                                                                  <div class="box__col box__col_xs-12">auto
+                                                                  <div class="box__col box__col_2 box__col_xs-12">2
                                                                   </div>
                                                 </div>
                                   </div>
                                   <div class="section__code">
                                     <pre><h3>HTML</h3>
 &lt;div class="grid"&gt;
-  &lt;div class="elem"&gt;auto&lt;/div&gt;
+  &lt;div class="elem_2 align-1"&gt;2&lt;/div&gt;
+  &lt;div class="elem_2 align-1"&gt;2&lt;/div&gt;
+  &lt;div class="elem_2 align-1"&gt;2&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class="grid"&gt;
-  &lt;div class="elem_3"&gt;3&lt;/div&gt;
-  &lt;div class="elem_7"&gt;7&lt;/div&gt;
-  &lt;div class="elem_2"&gt;2&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="grid"&gt;
-  &lt;div class="elem"&gt;auto&lt;/div&gt;
-  &lt;div class="elem"&gt;auto&lt;/div&gt;
-  &lt;div class="elem"&gt;auto&lt;/div&gt;
+  &lt;div class="elem_2 align-2"&gt;2&lt;/div&gt;
+  &lt;div class="elem_2 align-2"&gt;2&lt;/div&gt;
+  &lt;div class="elem_2 align-2"&gt;2&lt;/div&gt;
 &lt;/div&gt;</pre>
-                                    <pre><h3>Sass</h3>
+                                    <pre><h3>Sass (sass syntax)</h3>
+.grid
+  +grid()
+  .elem_2
+    +col(2)
+    +col-xs(12)
+  .align-1
+    +align-xl(around)
+    +align-lg(end)
+    +align-md()
+    +align-sm(center)
+  .align-1
+    +align-xl(between)
+    +align-lg(center)
+    +align-md(end)
+    +align-sm(between)</pre>
+                                  </div>
+                </section>
+                <section class="section section_lite-gray">
+                                  <h2 class="section__title">Mixin +offset()
+                                  </h2>
+                                  <div class="section__description">
+                                    <p>Миксин<span> +offset()</span> задается для элементов контейнера. Он сдвигает элементы на нужное количество колонок в право или лево. Принимает два аргумента, первый аргумент определяет направление (<span>right</span>/<span>left</span>), а второй аргумент принимает число, на которое необходимо сдвинуть элемент. Например<span> +offset(right, 5)</span></p>
+                                    <p>Он так же имеет суффиксы<span> -xs -sm -md -lg -xl</span> для всех медиазапросов.</p>
+                                  </div>
+                                  <div class="section__example">
+                                                <div class="box box_grid-in">
+                                                                  <div class="box__col box__col_2 box__col_sm-12 box__offset-r-3">right 3
+                                                                  </div>
+                                                                  <div class="box__col box__col_2 box__col_sm-12 box__offset-r-2">right 2
+                                                                  </div>
+                                                                  <div class="box__col box__col_2 box__col_sm-12 box__offset-r-1">right 1
+                                                                  </div>
+                                                </div>
+                                                <div class="box box_grid-in">
+                                                                  <div class="box__col box__col_2 box__col_sm-12 box__offset-r-1">right 1
+                                                                  </div>
+                                                                  <div class="box__col box__col_2 box__col_sm-12 box__offset-r-2">right 2
+                                                                  </div>
+                                                                  <div class="box__col box__col_2 box__col_sm-12 box__offset-r-1">right 1
+                                                                  </div>
+                                                </div>
+                                                <div class="box box_grid-in">
+                                                                  <div class="box__col box__col_2 box__col_sm-12 box__offset-r-2">right 2
+                                                                  </div>
+                                                                  <div class="box__col box__col_2 box__col_sm-12 box__offset-r">auto
+                                                                  </div>
+                                                </div>
+                                  </div>
+                                  <div class="section__code">
+                                    <pre><h3>HTML</h3>
+&lt;div class="grid"&gt;
+  &lt;div class="elem_2 right-3"&gt;right 3&lt;/div&gt;
+  &lt;div class="elem_2 right-2"&gt;right 2&lt;/div&gt;
+  &lt;div class="elem_2 right-1"&gt;right 1&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid"&gt;
+  &lt;div class="elem_2 right-1"&gt;right 1&lt;/div&gt;
+  &lt;div class="elem_2 right-2"&gt;right 2&lt;/div&gt;
+  &lt;div class="elem_2 right-1"&gt;right 1&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid"&gt;
+  &lt;div class="elem_2 right-2"&gt;right 2&lt;/div&gt;
+  &lt;div class="elem_2 right"&gt;auto&lt;/div&gt;
+&lt;/div&gt;</pre>
+                                    <pre><h3>Sass (sass syntax)</h3>
+.grid
+  +grid()
+  .elem_2
+    +col(2)
+    +col-xs(12)
+  .right
+    +offset(right)
+  .right-1
+    +offset(right, 1)
+  .right-2
+    +offset(right, 2)
+  .right-3
+    +offset(right, 3)</pre>
+                                  </div>
+                </section>
+                <section class="section section_lite-gray">
+                                  <h2 class="section__title">Mixin +hidden()
+                                  </h2>
+                                  <div class="section__description">
+                                    <p>Миксин<span> +hidden()</span> служит для скрытия элементов для нужных разрешений экрана с суффиксов<span> -xs -sm -md -lg -xl</span>. Просто укажите нужному элементу миксин<span> +hidden()</span> c нужнмы суффиксом и на этом разрешении экрана элемент будет скрыт. Миксин принимает однин аргумент со значениями:</p>
+                                    <P><span> only</span> - элемент будет скрыт для текущего разрешения экрана, указанного суффиксом в миксине<br><span> up</span> - элемент будет скрыт для текущего разрешения и всех больших<br><span> down</span> - элемент будет скрыт для текущего разрешения и всех меньших<br></P>
+                                  </div>
+                                  <div class="section__example">
+                                                <div class="box box_grid-in">
+                                                                  <div class="box__col box__col_4 box__col_xs-12 box__hidden-sm">hidden-sm
+                                                                  </div>
+                                                                  <div class="box__col box__col_4 box__col_xs-12 box__hidden-md box__offset-r-4">hidden-md
+                                                                  </div>
+                                                                  <div class="box__col box__col_4 box__col_xs-12 box__hidden-lg box__offset-r">hidden-lg
+                                                                  </div>
+                                                </div>
+                                  </div>
+                                  <div class="section__code">
+                                    <pre><h3>HTML</h3>
+&lt;div class="grid"&gt;
+  &lt;div class="elem_2 right-3"&gt;right 3&lt;/div&gt;
+  &lt;div class="elem_2 right-2"&gt;right 2&lt;/div&gt;
+  &lt;div class="elem_2 right-1"&gt;right 1&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid"&gt;
+  &lt;div class="elem_2 right-1"&gt;right 1&lt;/div&gt;
+  &lt;div class="elem_2 right-2"&gt;right 2&lt;/div&gt;
+  &lt;div class="elem_2 right-1"&gt;right 1&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="grid"&gt;
+  &lt;div class="elem_2 right-2"&gt;right 2&lt;/div&gt;
+  &lt;div class="elem_2 right"&gt;auto&lt;/div&gt;
+&lt;/div&gt;</pre>
+                                    <pre><h3>Sass (sass syntax)</h3>
+.grid
+  +grid()
+  .elem_2
+    +col(2)
+    +col-xs(12)
+  .right
+    +offset(right)
+  .right-1
+    +offset(right, 1)
+  .right-2
+    +offset(right, 2)
+  .right-3
+    +offset(right, 3)</pre>
+                                  </div>
+                </section>
+                <section class="section section_lite-gray">
+                                  <h2 class="section__title">Mixin +media()
+                                  </h2>
+                                  <div class="section__description">
+                                    <p>Ecли вам нужно применить какие-то свои стили для определенных размеров экрана, вы можете воспользоваться миксином<span> +media()</span> с нужным суффиксом<span> -xs -sm -md -lg -xl</span>
+                                      . После него добавляйте любые свои стили, они применятся только для заданного размера экрана.
+                                       Миксин принимает однин аргумент со значениями:
+                                    </p>
+                                    <P><span> only</span> - медиа запрос для текущего разрешения экрана, указанного суффиксом в миксине<br><span> up</span> - медиа запрос для текущего разрешения и всех больших<br><span> down</span> - медиа запрос для текущего разрешения и всех меньших<br></P>
+                                  </div>
+                                  <div class="section__example">
+                                                <div class="box box_grid-in">
+                                                                  <div class="box__col box__col_12 box__media-xs">media-xs
+                                                                  </div>
+                                                                  <div class="box__col box__col_12 box__media-sm">media-sm
+                                                                  </div>
+                                                                  <div class="box__col box__col_12 box__media-md">media-md
+                                                                  </div>
+                                                                  <div class="box__col box__col_12 box__media-lg">media-lg
+                                                                  </div>
+                                                                  <div class="box__col box__col_12 box__media-xl">media-xl
+                                                                  </div>
+                                                </div>
+                                  </div>
+                                  <div class="section__code">
+                                    <pre><h3>HTML</h3>
+&lt;div class="grid"&gt;
+  &lt;div class="elem xl"&gt;media-xl&lt;/div&gt;
+  &lt;div class="elem lg"&gt;media-lg&lt;/div&gt;
+  &lt;div class="elem md"&gt;media-md&lt;/div&gt;
+  &lt;div class="elem sm"&gt;media-sm&lt;/div&gt;
+  &lt;div class="elem xl"&gt;media-xl&lt;/div&gt;
+&lt;/div&gt;</pre>
+                                    <pre><h3>Sass (sass syntax)</h3>
 .grid
   +grid()
   .elem
     +col()
-  .elem_3
-    +col(3)
-    +col-xs(12)
-  .elem_7
-    +col(7)
-    +col-xs(12)
-  .elem_2
-    +col(2)
-    +col-xs(12)</pre>
+  .xl
+    +media-xl()
+      background-color: #795548
+  .lg
+    +media-lg()
+      background-color: #FFC107
+  .md
+    +media-md()
+      background-color: #009688
+  .sm
+    +media-sm()
+      background-color: #673AB7
+  .xl
+    +media-xl()
+      background-color: #F44336</pre>
                                   </div>
                 </section>
     <!-- Load Your Scripts-->

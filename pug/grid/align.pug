@@ -1,0 +1,85 @@
++b.SECTION.section._lite-gray
+  +e.H2.title Mixin +align()
+  +e.description
+    p
+      | Этот миксин служит для выравнивания элеменовт внутри контейнера и применяется к контейнеру. Его работа происходит за счет flexbox свойств
+      span  justify-content
+      |  и
+      span  align-items
+      | .
+    p
+      | Первым аргументом элементы позиционируются по горизонтали. Принимаются значения
+      span  start
+      | ,
+      span  end
+      | ,
+      span  center
+      | ,
+      span  around
+      | ,
+      span  between
+      | .<br> Вторым аргументом позиционирование происходит по вертикали. Принимаются значения
+      span  stretch
+      | ,
+      span  start
+      | ,
+      span  end
+      | ,
+      span  center
+      | ,
+      span  baseline
+      | .<br> По умолчанию установлены те же значения что и у свойств
+      span  justify-content
+      |  и
+      span  align-items
+      | . То есть миксин
+      span  +align()
+      |  без аргументов будет равен
+      span  +align(start, stretch)
+    p
+      | Вы так же можете выравнивать элементы внутри контейнера только для нужного разрешения, это осуществляется путем добавления суффиксов
+      span  -xs -sm -md -lg -xl
+      | . Без суффиксов миксин будет действовать для всех разрешений.
+
+
+  +e.example
+    +b.box._grid-in._align-1
+      +e.col._2._xs-12 2
+      +e.col._2._xs-12 2
+      +e.col._2._xs-12 2
+    +b.box._grid-in._align-2
+      +e.col._2._xs-12 2
+      +e.col._2._xs-12 2
+      +e.col._2._xs-12 2
+
+  +e.code
+    pre
+      | <h3>HTML</h3>
+      | &lt;div class="grid"&gt;
+      |   &lt;div class="elem_2 align-1"&gt;2&lt;/div&gt;
+      |   &lt;div class="elem_2 align-1"&gt;2&lt;/div&gt;
+      |   &lt;div class="elem_2 align-1"&gt;2&lt;/div&gt;
+      | &lt;/div&gt;
+      |
+      | &lt;div class="grid"&gt;
+      |   &lt;div class="elem_2 align-2"&gt;2&lt;/div&gt;
+      |   &lt;div class="elem_2 align-2"&gt;2&lt;/div&gt;
+      |   &lt;div class="elem_2 align-2"&gt;2&lt;/div&gt;
+      | &lt;/div&gt;
+    pre
+      | <h3>Sass (sass syntax)</h3>
+      | .grid
+      |   +grid()
+      |   .elem_2
+      |     +col(2)
+      |     +col-xs(12)
+      |   .align-1
+      |     +align-xl(around)
+      |     +align-lg(end)
+      |     +align-md()
+      |     +align-sm(center)
+      |   .align-1
+      |     +align-xl(between)
+      |     +align-lg(center)
+      |     +align-md(end)
+      |     +align-sm(between)

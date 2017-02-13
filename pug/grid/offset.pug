@@ -1,0 +1,66 @@
++b.SECTION.section._lite-gray
+  +e.H2.title Mixin +offset()
+  +e.description
+    p
+      | Миксин
+      span  +offset()
+      |  задается для элементов контейнера. Он сдвигает элементы на нужное количество колонок в право или лево. Принимает два аргумента, первый аргумент определяет направление (
+      span right
+      | /
+      span left
+      | ), а второй аргумент принимает число, на которое необходимо сдвинуть элемент. Например
+      span  +offset(right, 5)
+    p
+      | Он так же имеет суффиксы
+      span  -xs -sm -md -lg -xl
+      |  для всех медиазапросов.
+
+
+  +e.example
+    +b.box._grid-in
+      +e.col._2._sm-12.__offset-r-3 right 3
+      +e.col._2._sm-12.__offset-r-2 right 2
+      +e.col._2._sm-12.__offset-r-1 right 1
+    +b.box._grid-in
+      +e.col._2._sm-12.__offset-r-1 right 1
+      +e.col._2._sm-12.__offset-r-2 right 2
+      +e.col._2._sm-12.__offset-r-1 right 1
+    +b.box._grid-in
+      +e.col._2._sm-12.__offset-r-2 right 2
+      +e.col._2._sm-12.__offset-r auto
+
+  +e.code
+    pre
+      | <h3>HTML</h3>
+      | &lt;div class="grid"&gt;
+      |   &lt;div class="elem_2 right-3"&gt;right 3&lt;/div&gt;
+      |   &lt;div class="elem_2 right-2"&gt;right 2&lt;/div&gt;
+      |   &lt;div class="elem_2 right-1"&gt;right 1&lt;/div&gt;
+      | &lt;/div&gt;
+      |
+      | &lt;div class="grid"&gt;
+      |   &lt;div class="elem_2 right-1"&gt;right 1&lt;/div&gt;
+      |   &lt;div class="elem_2 right-2"&gt;right 2&lt;/div&gt;
+      |   &lt;div class="elem_2 right-1"&gt;right 1&lt;/div&gt;
+      | &lt;/div&gt;
+      |
+      | &lt;div class="grid"&gt;
+      |   &lt;div class="elem_2 right-2"&gt;right 2&lt;/div&gt;
+      |   &lt;div class="elem_2 right"&gt;auto&lt;/div&gt;
+      | &lt;/div&gt;
+
+    pre
+      | <h3>Sass (sass syntax)</h3>
+      | .grid
+      |   +grid()
+      |   .elem_2
+      |     +col(2)
+      |     +col-xs(12)
+      |   .right
+      |     +offset(right)
+      |   .right-1
+      |     +offset(right, 1)
+      |   .right-2
+      |     +offset(right, 2)
+      |   .right-3
+      |     +offset(right, 3)

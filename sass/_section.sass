@@ -1,8 +1,6 @@
 .section
   +container()
-  padding:
-    top: 40px
-    bottom: 40px
+  padding: 40px 25px
   &_white
     background-color: #fff
   &_lite-gray
@@ -24,6 +22,8 @@
     span
       color: #03A9F4
       font-family: monospace
+    p
+      margin-top: 8px
 
   &__example
     margin-bottom: 1em
@@ -35,6 +35,8 @@
       padding-bottom: 16px
     pre
       +col()
+      +col-sm(12)
+      margin-top: 16px
       overflow-y: hidden
       background-color: #fff
       box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12)

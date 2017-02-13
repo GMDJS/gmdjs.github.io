@@ -17,7 +17,7 @@
 
   +e.example
     +b.box._grid-in
-      +e.col 1
+      +e.col auto
 
     +b.box._grid-in
       +e.col._3._xs-12 3
@@ -26,9 +26,9 @@
 
     +b.box._grid-in
       +e.col._xs-12 auto
+      +e.col._2._xs-12 2
       +e.col._xs-12 auto
-      +e.col._xs-12 auto
-      +e.col._xs-12 auto
+      +e.col._2._xs-12 2
 
   +e.code
     pre
@@ -45,11 +45,12 @@
       |
       | &lt;div class="grid"&gt;
       |   &lt;div class="elem"&gt;auto&lt;/div&gt;
+      |   &lt;div class="elem_2"&gt;2&lt;/div&gt;
       |   &lt;div class="elem"&gt;auto&lt;/div&gt;
-      |   &lt;div class="elem"&gt;auto&lt;/div&gt;
+      |   &lt;div class="elem_2"&gt;2&lt;/div&gt;
       | &lt;/div&gt;
     pre
-      | <h3>Sass</h3>
+      | <h3>Sass (sass syntax)</h3>
       | .grid
       |   +grid()
       |   .elem

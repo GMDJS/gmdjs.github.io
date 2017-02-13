@@ -1,0 +1,61 @@
++b.SECTION.section._lite-gray
+  +e.H2.title Mixin +hidden()
+  +e.description
+    p
+      | Миксин
+      span  +hidden()
+      |  служит для скрытия элементов для нужных разрешений экрана с суффиксов
+      span  -xs -sm -md -lg -xl
+      | . Просто укажите нужному элементу миксин
+      span  +hidden()
+      |  c нужнмы суффиксом и на этом разрешении экрана элемент будет скрыт. Миксин принимает однин аргумент со значениями:
+    P
+      span  only
+      |  - элемент будет скрыт для текущего разрешения экрана, указанного суффиксом в миксине<br>
+      span  up
+      |  - элемент будет скрыт для текущего разрешения и всех больших<br>
+      span  down
+      |  - элемент будет скрыт для текущего разрешения и всех меньших<br>
+
+
+  +e.example
+    +b.box._grid-in
+      +e.col._4._xs-12.__hidden-sm hidden-sm
+      +e.col._4._xs-12.__hidden-md.__offset-r-4 hidden-md
+      +e.col._4._xs-12.__hidden-lg.__offset-r hidden-lg
+
+  +e.code
+    pre
+      | <h3>HTML</h3>
+      | &lt;div class="grid"&gt;
+      |   &lt;div class="elem_2 right-3"&gt;right 3&lt;/div&gt;
+      |   &lt;div class="elem_2 right-2"&gt;right 2&lt;/div&gt;
+      |   &lt;div class="elem_2 right-1"&gt;right 1&lt;/div&gt;
+      | &lt;/div&gt;
+      |
+      | &lt;div class="grid"&gt;
+      |   &lt;div class="elem_2 right-1"&gt;right 1&lt;/div&gt;
+      |   &lt;div class="elem_2 right-2"&gt;right 2&lt;/div&gt;
+      |   &lt;div class="elem_2 right-1"&gt;right 1&lt;/div&gt;
+      | &lt;/div&gt;
+      |
+      | &lt;div class="grid"&gt;
+      |   &lt;div class="elem_2 right-2"&gt;right 2&lt;/div&gt;
+      |   &lt;div class="elem_2 right"&gt;auto&lt;/div&gt;
+      | &lt;/div&gt;
+
+    pre
+      | <h3>Sass (sass syntax)</h3>
+      | .grid
+      |   +grid()
+      |   .elem_2
+      |     +col(2)
+      |     +col-xs(12)
+      |   .right
+      |     +offset(right)
+      |   .right-1
+      |     +offset(right, 1)
+      |   .right-2
+      |     +offset(right, 2)
+      |   .right-3
+      |     +offset(right, 3)
