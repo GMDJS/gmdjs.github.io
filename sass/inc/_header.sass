@@ -1,26 +1,49 @@
-.sect
-  max-width: 100%
-  background-color: #afa
+header
+  position: relative
+  margin-bottom: 24px
+  background-image: url(../../img/header.jpg)
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12),0 2px 4px -1px rgba(0,0,0,.2)
+  &::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: $color-accent
+    opacity: .6
+
 
 .header
   +grid()
-  background-color: #ddd
-  height: 100px
-  +align(between, end)
-
-  &__logo
-    +col(2)
-  &__top-menu
-    +col-lg(6, no)
-    +col-md(9)
-    +hidden-sm()
-    +offset-lg(right, 3)
-  &__menu
-    +hidden-md(up)
-
-.top-menu
-  display: flex
+  +align(between, center)
+  position: relative
+  z-index: 5
+  height: 200px
+  padding-top: 40px
+  &__title
+    +col(4)
+    align-self: flex-start
+    color: #fff
+    text-transform: capitalize
+    text-decoration: none
+    font-size: 24px
+  &__link-group
+    +col(4)
+    align-self: flex-end
+    display: flex
+    justify-content: flex-end
   &__link
-    margin:
-      left: auto
-      right: auto
+    opacity: .87
+    text-decoration: none
+    color: #fff
+    padding: 0 8px
+    &:hover
+      opacity: 1
+    i
+      line-height: 64px
+      margin-right: 8px
+      vertical-align: middle
+    p
+      line-height: 64px
+      margin-right: 8px
