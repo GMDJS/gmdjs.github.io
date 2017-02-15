@@ -20,7 +20,6 @@
   &__description
     font-size: 14px
     color: rgba(#000000, 0.54)
-    max-width: 90%
     margin-bottom: 2em
     line-height: 1.4
     span
@@ -28,6 +27,9 @@
       font-family: monospace
     p
       margin-top: 8px
+      max-width: 90%
+      +media-xs()
+        max-width: 100%
 
   &__example
     margin-bottom: 1em
