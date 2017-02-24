@@ -33,7 +33,7 @@
       flex-basis: calc(100% / #{$columns} * #{$val})
 
 =col-xl($val: 0, $gutter: yes)
-  +media-xl()
+  +media-xl(up)
     box-sizing: border-box
     flex: 0 0 auto
     @if $gutter == yes
@@ -68,7 +68,7 @@
         flex-basis: calc(100% / #{$columns} * #{$val})
 
 =col-lg($val: 0, $gutter: yes)
-  +media-lg(down)
+  +media-lg(up)
     box-sizing: border-box
     flex: 0 0 auto
     @if $gutter == yes
@@ -103,7 +103,7 @@
         flex-basis: calc(100% / #{$columns} * #{$val})
 
 =col-md($val: 0, $gutter: yes)
-  +media-md(down)
+  +media-md(up)
     box-sizing: border-box
     flex: 0 0 auto
     @if $gutter == yes
@@ -138,7 +138,7 @@
         flex-basis: calc(100% / #{$columns} * #{$val})
 
 =col-sm($val: 0, $gutter: yes)
-  +media-sm(down)
+  +media-sm(up)
     box-sizing: border-box
     flex: 0 0 auto
     @if $gutter == yes
@@ -173,7 +173,7 @@
         flex-basis: calc(100% / #{$columns} * #{$val})
 
 =col-xs($val: 0, $gutter: yes)
-  +media-xs()
+  +media-xs(down)
     box-sizing: border-box
     flex: 0 0 auto
     @if $gutter == yes

@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/GMDJS/ready_template#readme",
   "devDependencies": {
-    "autoprefixer": "^6.7.2",
+    "autoprefixer": "^6.7.4",
     "browser-sync": "^2.18.8",
     "cssnano": "^3.10.0",
     "gulp": "^3.9.1",

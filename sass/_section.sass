@@ -17,11 +17,16 @@
     color: rgba(0, 0, 0, 0.87)
     margin-bottom: 1em
 
+  &__link
+    color: $color-accent
+    text-decoration: none
+
   &__description
     font-size: 14px
     color: rgba(#000000, 0.54)
-    margin-bottom: 2em
     line-height: 1.4
+    &_mb
+      margin-bottom: 16px
     span
       color: #03A9F4
       font-family: monospace
@@ -40,7 +45,7 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.38)
       padding-bottom: 16px
     pre
-      +col()
+      +col-md(6)
       +col-sm(12)
       margin-top: 16px
       overflow-y: hidden
@@ -75,16 +80,20 @@
     line-height: 36px
     vertical-align: middle
     &_raised
-      background: rgba(158,158,158,.2)
+      background: $color-accent
+      // background: rgba(158,158,158,.2)
       box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12)
     &:hover
-      background-color: rgba(158,158,158,.2)
+      background-color: lighten($color-accent  , 10%)
+      // background-color: rgba(158,158,158,.2)
     &:focus:not(:active)
       box-shadow: 0 0 8px rgba(0,0,0,.18), 0 8px 16px rgba(0,0,0,.36)
-      background-color: rgba(158,158,158,.4)
+      background-color: $color-accent
+      // background-color: rgba(158,158,158,.4)
     &:active
       box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2)
-      background-color: rgba(158,158,158,.4)
+      background-color: $color-accent
+      // background-color: rgba(158,158,158,.4)
 
 
 .grid

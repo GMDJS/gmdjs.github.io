@@ -26,9 +26,9 @@
                   </div>
     </header>
                 <section class="section section_lite-gray">
-                                  <h2 class="section__title">Mixin +grid()
+                                  <h2 class="section__title">Миксин +grid()
                                   </h2>
-                                  <div class="section__description">
+                                  <div class="section__description section__description_mb">
                                     <p>Для того чтобы начать делать адаптивную верстку, вам необходимо создать контейнер, в котором вы сможете задавать элеменам сколько колонок они должны занимать внутри контейнера. Для этого в стилях добавьте миксин<span> +grid()</span> к любому селектору. Это может быть class, id, tag.</p>
                                     <p>Этот миксин принимает один из двух аргументов<span> +grid(fluid)</span> или<span> +grid(fixed)</span>. Агрумент<span> fixed</span> сделает вашу сетку фиксированной, когда размер контейнера для каждого медиа запроса фиксирован. А в случае передачи аргумента<span> fluid</span> контейнер будет растянут на всю ширину экрана браузера.</p>
                                     <p>По умолчанию стоит значение<span> fixed</span> то есть вам достаточно применить миксин<span> +grid()</span> чтобы получить фиксированную сетку.</p>
@@ -40,15 +40,15 @@
   &lt;div&gt; ... &lt;/div&gt;
   &lt;div&gt; ... &lt;/div&gt;
 &lt;/div&gt;</pre>
-                                    <pre><h3>Sass (sass syntax)</h3> 
+                                    <pre><h3>Sass (sass syntax)</h3>
 .your-class
   +grid()</pre>
                                   </div>
                 </section>
                 <section class="section section_lite-gray">
-                                  <h2 class="section__title">Mixin +col()
+                                  <h2 class="section__title">Миксин +col()
                                   </h2>
-                                  <div class="section__description">
+                                  <div class="section__description section__description_mb">
                                     <p>Для каждого элемента родительского дива, заданным контейнером сетки, следует использовать миксин<span> +col()</span>
                                        c суффиксами или без.
                                       Этот миксин без суффикса указывает размер для елемента глобально
@@ -114,9 +114,9 @@
                                   </div>
                 </section>
                 <section class="section section_lite-gray">
-                                  <h2 class="section__title">Mixin +align()
+                                  <h2 class="section__title">Миксин +align()
                                   </h2>
-                                  <div class="section__description">
+                                  <div class="section__description section__description_mb">
                                     <p>Этот миксин служит для выравнивания элеменовт внутри контейнера и применяется к контейнеру. Его работа происходит за счет flexbox свойств<span> justify-content</span> и<span> align-items</span>.</p>
                                     <p>Первым аргументом элементы позиционируются по горизонтали. Принимаются значения<span> start</span>,<span> end</span>,<span> center</span>,<span> around</span>,<span> between</span>.<br> Вторым аргументом позиционирование происходит по вертикали. Принимаются значения<span> stretch</span>,<span> start</span>,<span> end</span>,<span> center</span>,<span> baseline</span>.<br> По умолчанию установлены те же значения что и у свойств<span> justify-content</span> и<span> align-items</span>. То есть миксин<span> +align()</span> без аргументов будет равен<span> +align(start, stretch)</span></p>
                                     <p>Вы так же можете выравнивать элементы внутри контейнера только для нужного разрешения, это осуществляется путем добавления суффиксов<span> -xs -sm -md -lg -xl</span>. Без суффиксов миксин будет действовать для всех разрешений.</p>
@@ -171,9 +171,9 @@
                                   </div>
                 </section>
                 <section class="section section_lite-gray">
-                                  <h2 class="section__title">Mixin +offset()
+                                  <h2 class="section__title">Миксин +offset()
                                   </h2>
-                                  <div class="section__description">
+                                  <div class="section__description section__description_mb">
                                     <p>Миксин<span> +offset()</span> задается для элементов контейнера. Он сдвигает элементы на нужное количество колонок в право или лево. Принимает два аргумента, первый аргумент определяет направление (<span>right</span>/<span>left</span>), а второй аргумент принимает число, на которое необходимо сдвинуть элемент. Например<span> +offset(right, 5)</span></p>
                                     <p>Он так же имеет суффиксы<span> -xs -sm -md -lg -xl</span> для всех медиазапросов.</p>
                                   </div>
@@ -236,9 +236,9 @@
                                   </div>
                 </section>
                 <section class="section section_lite-gray">
-                                  <h2 class="section__title">Mixin +hidden()
+                                  <h2 class="section__title">Миксин +hidden()
                                   </h2>
-                                  <div class="section__description">
+                                  <div class="section__description section__description_mb">
                                     <p>Миксин<span> +hidden()</span> служит для скрытия элементов для нужных разрешений экрана с суффиксов<span> -xs -sm -md -lg -xl</span>. Просто укажите нужному элементу миксин<span> +hidden()</span> c нужнмы суффиксом и на этом разрешении экрана элемент будет скрыт. Миксин принимает однин аргумент со значениями:</p>
                                     <P><span> only</span> - элемент будет скрыт для текущего разрешения экрана, указанного суффиксом в миксине<br><span> up</span> - элемент будет скрыт для текущего разрешения и всех больших<br><span> down</span> - элемент будет скрыт для текущего разрешения и всех меньших<br></P>
                                   </div>
@@ -255,20 +255,9 @@
                                   <div class="section__code">
                                     <pre><h3>HTML</h3>
 &lt;div class="grid"&gt;
-  &lt;div class="elem_2 right-3"&gt;right 3&lt;/div&gt;
-  &lt;div class="elem_2 right-2"&gt;right 2&lt;/div&gt;
-  &lt;div class="elem_2 right-1"&gt;right 1&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="grid"&gt;
-  &lt;div class="elem_2 right-1"&gt;right 1&lt;/div&gt;
-  &lt;div class="elem_2 right-2"&gt;right 2&lt;/div&gt;
-  &lt;div class="elem_2 right-1"&gt;right 1&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="grid"&gt;
-  &lt;div class="elem_2 right-2"&gt;right 2&lt;/div&gt;
-  &lt;div class="elem_2 right"&gt;auto&lt;/div&gt;
+  &lt;div class="hidden-sm"&gt; hidden-sm &lt;/div&gt;
+  &lt;div class="hidden-md"&gt; hidden-md &lt;/div&gt;
+  &lt;div class="hidden-lg"&gt; hidden-lg &lt;/div&gt;
 &lt;/div&gt;</pre>
                                     <pre><h3>Sass (sass syntax)</h3>
 .grid
@@ -287,9 +276,9 @@
                                   </div>
                 </section>
                 <section class="section section_lite-gray">
-                                  <h2 class="section__title">Mixin +media()
+                                  <h2 class="section__title">Миксин +media()
                                   </h2>
-                                  <div class="section__description">
+                                  <div class="section__description section__description_mb">
                                     <p>Ecли вам нужно применить какие-то свои стили для определенных размеров экрана, вы можете воспользоваться миксином<span> +media()</span> с нужным суффиксом<span> -xs -sm -md -lg -xl</span>
                                       . После него добавляйте любые свои стили, они применятся только для заданного размера экрана.
                                        Миксин принимает однин аргумент со значениями:
@@ -313,11 +302,11 @@
                                   <div class="section__code">
                                     <pre><h3>HTML</h3>
 &lt;div class="grid"&gt;
-  &lt;div class="elem xl"&gt;media-xl&lt;/div&gt;
-  &lt;div class="elem lg"&gt;media-lg&lt;/div&gt;
-  &lt;div class="elem md"&gt;media-md&lt;/div&gt;
-  &lt;div class="elem sm"&gt;media-sm&lt;/div&gt;
-  &lt;div class="elem xl"&gt;media-xl&lt;/div&gt;
+  &lt;div class="elem xl"&gt; media-xl &lt;/div&gt;
+  &lt;div class="elem lg"&gt; media-lg &lt;/div&gt;
+  &lt;div class="elem md"&gt; media-md &lt;/div&gt;
+  &lt;div class="elem sm"&gt; media-sm &lt;/div&gt;
+  &lt;div class="elem xl"&gt; media-xl &lt;/div&gt;
 &lt;/div&gt;</pre>
                                     <pre><h3>Sass (sass syntax)</h3>
 .grid
@@ -339,6 +328,13 @@
   .xl
     +media-xl()
       background-color: #F44336</pre>
+                                  </div>
+                </section>
+                <section class="section section_lite-gray">
+                                  <h2 class="section__title">Настройка
+                                  </h2>
+                                  <div class="section__description section__description_mb">
+                                    <p>Сетка имеет ряд настроек. Все настройкри производятся в файле<span> settings.sass</span>. Вы можете задать свои брейпоинты, ширину между колонками и их количество. В скором времени появится новые полезные настройки для кастомизации сетки.</p>
                                   </div>
                 </section>
     <footer>
